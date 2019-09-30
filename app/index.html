@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div ng-controller="rootController">
+            {{title | upperCase }}<br/>
+            <span ng-repeat="b in breadCrumb"> > {{b}}</span>
+            <user data="user"></user>
+            <li ng-repeat="x in links"><a ui-sref="{{x}}">{{x}}</a></li>
+            
+            <ui-view></ui-view>
+        </div>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="constant.js"></script>
+        <script src="app.js"></script>
+        <script src="utils/routeManager.js"></script>
+        <script src="utils/filters.js"></script>
+        <script src="utils/directives.js"></script>
+        <script src="rootController.js"></script>
+        <script src="user/user-module.js"></script>
+        <script src="user/home/user-home-controller.js"></script>
+        <script src="admin/admin-module.js"></script>
+        <script src="admin/home/admin-controller.js"></script>   
+    </body>
+</html>

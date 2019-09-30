@@ -1,0 +1,16 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div ng-controller="rootController">
+            {{title | upperCase }}<br/>
+            <span ng-repeat="b in breadCrumb"> > {{b}}</span>
+            <user data="user"></user>
+            <li ng-repeat="x in links"><a ui-sref="{{x}}">{{x}}</a></li>
+            
+            <ui-view></ui-view>
+        </div>
+        
+    </body>
+</html>

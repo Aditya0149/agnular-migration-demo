@@ -1,5 +1,5 @@
-import constants from "./constant";
-declare var angular:any;
+import constants from "../Angular/constant";
+declare var angular: angular.IAngularStatic;
 
 (function (angular) {
     angular
@@ -25,9 +25,13 @@ declare var angular:any;
                     }
                 );
                 routeManager.setBreadcrumb(['Home']);
+            
                 $scope.$on("setUserName", function(event,args) {
-                    $scope.user = args;
+                    $scope.setUserName(args);
                 })
+                $scope.setUserName = function(data) {
+                    $scope.user = data;
+                }
             }
         ]);
 

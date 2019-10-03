@@ -1,13 +1,9 @@
-declare var angular:any;
-(function (angular) {
-    angular
-        .module('cloudlex.user')
-        .controller('userHomeController', ['$rootScope', 'routeManager', '$scope',
-            function ($rootScope, routeManager, $scope) {
-                this.title = "Welcome to user home controller";
-                routeManager.setBreadcrumb(['Home', 'User']);
-                $scope.$emit('setUserName','User');
-            }
-        ]);
+declare var angular: angular.IAngularStatic;
+import { HomeComponent } from '../../../Angular/user/home/home.component';;
+import { downgradeComponent } from '@angular/upgrade/static'; 
 
-})(angular);
+angular.module('cloudlex.user')
+.directive(
+    'userHome',
+    downgradeComponent({ component: HomeComponent }) as any
+  )

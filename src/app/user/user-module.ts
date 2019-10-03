@@ -1,4 +1,4 @@
-declare var angular:any;
+declare var angular: angular.IAngularStatic;
 (function () {
 
     // Declare app level module which depends on views, and components
@@ -9,16 +9,13 @@ declare var angular:any;
             .state('user', {
                 url: '/user',
                 template: `
-                    <div>
-                        {{user.title}}
-                    </div>
-                `,
-                controller: 'userHomeController as user'
+                    <user-home (set-user-name)="setUserName($event)"></user-home>
+                `
             })
             .state('angularUser', {
                 url: '/angularUser',
                 template: `
-                    <angular-user></angular-user>
+                    <angular-user (set-user-name)="setUserName($event)"></angular-user>
                 `
             })
 

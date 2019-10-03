@@ -1,11 +1,9 @@
-declare var angular:any;
+declare var angular: angular.IAngularStatic;
+import { UserDirective } from '../../Angular/utils/userDirective';
+import { downgradeComponent } from '@angular/upgrade/static';  
+
 angular.module('cloudlex.directives', [])
-.directive('user', function() {
-    return {
-      restrict: 'E',
-      scope: {
-        user: '=data'
-      },
-      template: '<h2>Hello {{user}}'
-    };
-  });
+.directive(
+  'user',
+  downgradeComponent({ component: UserDirective }) as any
+)

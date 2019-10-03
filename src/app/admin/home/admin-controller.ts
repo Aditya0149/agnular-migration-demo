@@ -1,13 +1,11 @@
-declare var angular:any;
-(function (angular) {
+declare var angular: angular.IAngularStatic;
+import { AdminHomeComponent } from '../../../Angular/admin/admin-home/admin-home.component';
+import { downgradeComponent } from '@angular/upgrade/static'; 
+
     angular
         .module('cloudlex.admin')
-        .controller('adminHomeController', ['$rootScope', 'routeManager', '$scope', 
-            function ($rootScope, routeManager, $scope) {
-                this.title = "Welcome to admin home controller";
-                routeManager.setBreadcrumb(['Home', 'Admin']);
-                $scope.$emit('setUserName','Admin');
-            }
-        ]);
+        .directive(
+            'adminHome',
+            downgradeComponent({ component: AdminHomeComponent }) as any
+        )
 
-})(angular);

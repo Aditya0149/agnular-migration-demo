@@ -1,0 +1,7 @@
+<span *ngFor="let link of links"><a [routerLink]='link'>{{link}}</a> | </span><br/><br/>
+<span *ngFor="let r of routeManager.breadcrumb | async">{{r}} > </span>
+<h2>
+    Title : {{rootScopeService.title}}<br/>
+    user name : {{ sharedService.userName | async }}
+    <router-outlet></router-outlet>
+</h2>

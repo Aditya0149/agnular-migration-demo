@@ -1,4 +1,4 @@
-declare var angular:any;
+
 angular.module('cloudlex.directives', [])
 .directive('user', function() {
     return {

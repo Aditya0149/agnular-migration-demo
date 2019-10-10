@@ -1,4 +1,4 @@
-declare var angular:any;
+
 (function () {
 
     // Declare app level module which depends on views, and components

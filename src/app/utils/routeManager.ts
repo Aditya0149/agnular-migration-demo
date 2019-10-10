@@ -1,4 +1,4 @@
-declare var angular:any;
+
 (function (angular) {
 
 
